@@ -4,7 +4,7 @@ import java.awt.*;
 import java.awt.event.*;
 public class Login extends JFrame implements ActionListener{
     JTextField nameTextField;
-    JButton rules,back;
+    JButton Start,back;
     Login(){
         setLayout(null);
         ImageIcon img1=new ImageIcon(ClassLoader.getSystemResource("icons/login2.png"));//From JFrame class
@@ -31,13 +31,13 @@ public class Login extends JFrame implements ActionListener{
         nameTextField.setFont(new Font("Raleway",Font.BOLD,15));
         add(nameTextField);
         //Rules Button
-        rules=new JButton("Rules");
-        rules.setFont(new Font("Raleway",Font.BOLD,20));
-        rules.setBounds(750,300,120,30);
-        rules.setBackground(new Color(30,144,254));
-        rules.setForeground(Color.WHITE);
-        rules.addActionListener(this);
-        add(rules);
+        Start=new JButton("Start");
+        Start.setFont(new Font("Raleway",Font.BOLD,20));
+        Start.setBounds(750,300,120,30);
+        Start.setBackground(new Color(30,144,254));
+        Start.setForeground(Color.WHITE);
+        Start.addActionListener(this);
+        add(Start);
         //Back button
         back=new JButton("Back");
         back.setFont(new Font("Raleway",Font.BOLD,20));
@@ -53,10 +53,10 @@ public class Login extends JFrame implements ActionListener{
         setLocation(100,200);
     }
     public void actionPerformed(ActionEvent ae){
-        if(ae.getSource()==rules){
+        if(ae.getSource()==Start){
             String tname=nameTextField.getText();
             setVisible(false);
-            new Rules(tname);
+            new Quiz_Start(tname);
         }
         else if(ae.getSource()==back){
             setVisible(false);
